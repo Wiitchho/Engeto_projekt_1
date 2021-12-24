@@ -52,12 +52,14 @@ else:
 #získat od uživatele výběr ze 3 možnostíW
 # a při textu nebo špatném výběru ho upozornit
 
-vyber_textu = int(input('Vyber si text 1-3:'))
-if  vyber_textu <= 3:
-    print(TEXTS[vyber_textu - 1])
-
-elif vyber_textu:
-    print('Vybral jsi špatně!')
+vyber = input('Zadejte výběr 1-3')
+if vyber.isalpha():
+    print('Neplatná volba, ukončuji')
+    exit()
+elif vyber.isalnum() and int(vyber) <=3 and int(vyber) > 0:
+    print(TEXTS[int(vyber)-1])
+else:
+    print('Neplatná volba, ukončuji!')
     exit()
 
 #Počátadlo na text
@@ -65,8 +67,8 @@ print(oddelovac)
 print(mezera)
 list = []
 celkem_slov = 0
-for slovo in TEXTS[vyber_textu - 1].split():
-    list.append(slovo.strip('.,:'))
+for slovo in TEXTS[int(vyber) - 1].split():
+    list.append(slovo.strip('.,: '))
 for slovo in list:
     celkem_slov += 1
 
