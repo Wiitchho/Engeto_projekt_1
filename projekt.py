@@ -72,7 +72,6 @@ for slovo in TEXTS[int(vyber) - 1].split():
 for slovo in list:
     celkem_slov += 1
 
-
 #- počet slov začínajících velkým písmenem,
 #- počet slov psaných velkými písmeny,
 #- počet slov psaných malými písmeny,
@@ -93,7 +92,6 @@ for slovo in list:
 for cislo in list:
     if cislo.isnumeric():
         pocet_jedno_cisel += 1
-
 #- sumu všech čísel (ne cifer) v textu.
 list_cisel = []
 for cislo in list:
@@ -122,11 +120,11 @@ for cisla in seznam:
         knihovna[cisla] += 1
 #znazornit ze slovníku grafem počty slov
 graf = []
-print('DELKA | GRAF| POČET')
+print('***|*** GRAF PRO DÉLKU SLOV ***|***')
 for klice in knihovna.items():
     delka = klice[0]
     pocet = klice[1]
     graf_1 = pocet * '*'
-    print(delka, graf_1 ,'|',pocet)
+    print(f'{delka:>3} | {graf_1:^20} | {pocet:<10}')
 print(oddelovac)
 print('Konec programu. Ukončuji!')
