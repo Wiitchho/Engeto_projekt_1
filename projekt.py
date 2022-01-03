@@ -68,8 +68,9 @@ print(mezera)
 list = []
 celkem_slov = 0
 for slovo in TEXTS[int(vyber) - 1].split():
-    if slovo.isalpha() == True:
-        list.append(slovo.strip('.,: !?-'))
+    slovo.strip('.,: !?-')
+    if slovo.isprintable() == True:
+        list.append(slovo)
 for slovo in list:
     celkem_slov += 1
 
