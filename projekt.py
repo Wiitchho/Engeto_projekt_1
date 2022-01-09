@@ -69,7 +69,7 @@ list = []
 celkem_slov = 0
 for slovo in TEXTS[int(vyber) - 1].split():
     rez = slovo.strip('.,: !?-')
-    if slovo != '':
+    if rez != '':
         list.append(rez)
 
 for slovo in list:
